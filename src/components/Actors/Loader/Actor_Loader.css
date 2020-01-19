@@ -1,0 +1,84 @@
+.actor-img-box{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto; 
+    box-shadow: 0px 1px 14px 2px rgba(0, 0, 0, 0.4);
+}
+
+._item .p{
+    margin: 15px auto;
+    background-color: #999;
+    width: 90%;
+    height: 10px;
+    border-radius: 10px;
+}
+
+/* slider editing */
+.all_actors .owl-theme .owl-prev, .all_actors .owl-theme .owl-next {
+    background-color: #fff !important;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.all_actors .owl-theme .owl-prev i, .all_actors .owl-theme .owl-next i {
+    font-size: 20px;
+    font-weight: bold;
+    color: #B30415;
+}
+
+.all_actors .owl-theme .owl-next {
+    right: 0px;
+  }
+
+  .all_actors .owl-theme .owl-prev{
+    left: 0px;
+  }
+
+  .all_actors .owl-item {
+    opacity: .3;
+    transition: 1s all;
+    -webkit-transition: 1s all;
+    margin-top: 18px;
+    
+ }
+ .all_actors .owl-item.active {
+   opacity: 1;
+ }
+
+ .light-actor {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: placeHolderShimmer;
+    animation-name: placeHolderShimmer;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background: #333333;
+    background-image: linear-gradient(to right, #333333 0%, #4b4b4b 20%, #333333 40%, #333333 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+@keyframes placeHolderShimmer {
+
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}

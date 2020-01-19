@@ -1,0 +1,238 @@
+.movie_details_main{
+    width: 100%;
+    color: #999999;
+}
+
+.wrapper{
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.wrapper img{
+    max-height: 100%;
+    width: 100%;
+    opacity: 0.65 !important;
+    object-fit: cover;
+}
+
+.poster-box{
+    width: 300px;
+    height: 200px;
+    position: relative;
+}
+
+.poster-box img{
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: -80px;
+    box-shadow:0px 1px 14px 2px rgba(0, 0, 0, 0.54);
+    opacity: 0.8;
+}
+
+.poster-btn-box{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* start modal vedio edit */
+
+.movie-trailer{
+    position: absolute;
+    top: 110px;
+}
+
+.movie-trailer i{
+    color: #b30415;
+    font-size: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.modal-video-close-btn{
+    right: 0 !important;
+}
+
+.modal-video-close-btn:after, .modal-video-close-btn:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: -6px;
+}
+
+.modal-video-close-btn:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.modal-video-close-btn:after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+/* movie-data section */
+
+.movie-data .data_1{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-top: 50px;
+}
+
+.movie-data .data_1 h3{
+    overflow-wrap: break-word;
+    width: 75%; 
+}
+
+.movie-data .data_1 .movie-rate{
+    font-size: 16px;
+    font-weight: bold;
+    color: #b30415;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 4px 12px;
+    height: 30px;
+}
+
+.movie-data .data_2 p{
+    font-size: 14px;
+}
+
+.movie-data .data_3{
+    margin-top: 30px;
+    padding: 0 15px;
+    line-height: 2.5;
+}
+
+.movie-data .data_3 span{
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+.movie-data .data_4{
+    margin-top: 40px;
+}
+
+.movie-data .data_4 p{
+    font-weight: lighter;
+    line-height: 1.9;
+}
+
+.all_directors{
+    display: flex;
+    justify-content: center;
+}
+
+.director-img-box{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    box-shadow: 0px 1px 14px 2px rgba(0, 0, 0, 0.4);
+}
+
+.director-img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.actors h5{
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:767px){
+    .wrapper{
+        height: 350px;
+    }
+    .wrapper img{
+        width: 180% !important;
+        left: -30%;
+        position: relative;
+    }
+    .poster-box{
+        width: 200px;
+        height: 220px;
+    }
+    .poster__{
+        display: flex;
+        justify-content: center;
+    }
+    .movie-trailer{
+        top: 45px;
+    }
+    .movie-trailer i{
+        font-size: 50px; 
+    }
+}
+
+@media (min-width:767px) and (max-width:991px){
+    .wrapper{
+        height: 400px;
+    }
+    .poster-box{
+        width: 200px;
+        height: 200px;
+    }
+    .movie-trailer{
+        top: 45px;
+    }
+    .movie-trailer i{
+        font-size: 50px; 
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px){
+    .wrapper{
+        height: 450px;
+    }
+    .poster-box{
+        width: 270px;
+        height: 200px;
+    }
+    .movie-trailer{
+        top: 85px;
+    }
+}
+
+.light-1 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: placeHolderShimmer;
+    animation-name: placeHolderShimmer;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    background: #333333;
+    background-image: linear-gradient(to right, #333333 0%, #4b4b4b 20%, #333333 40%, #333333 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes placeHolderShimmer {
+
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 868px 0;
+    }
+}

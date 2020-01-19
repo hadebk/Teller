@@ -1,0 +1,131 @@
+.search-box{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.form-control {
+    padding-left: 3rem;
+    color: #999;
+    background-color:#111;
+    border: 0 !important;
+    border-radius: 30px;
+    height: 45px;
+    outline: 0;
+}
+
+.form-control:focus{
+    background-color: #111;
+    color: #999;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #6c7576;
+    margin-top: 3px;
+    padding-left: 20px;
+}
+.main-box_{
+    position: relative;
+}
+
+.suggestions{
+    background-color: #333;
+    border-radius: 3px;
+    padding: 25px;
+    color: #999;
+    height: 365px;
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    left: 0;
+}
+
+.suggestions a{
+    display: block;
+    margin-bottom: 15px;
+    padding: 15px 15px 25px;
+    border-radius: 3px;
+    -webkit-box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow:-5px 5px 10px 0px rgba(0, 0, 0, 0.31);
+    box-shadow: -5px 5px 10px 0px rgba(0, 0, 0, 0.31);
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.suggestions a:hover{
+    text-decoration: none;
+    -webkit-box-shadow: 0px 3px 10px 5px rgba(0, 0, 0, 0.31);
+    -moz-box-shadow: 0px 3px 10px 5px rgba(0, 0, 0, 0.31);
+    box-shadow: 0px 3px 10px 5px rgba(0, 0, 0, 0.31);
+}
+
+.searchResult-image {
+    width: 50px;
+    height: 60px;
+    float: left;
+    clear: both;
+    margin-right: 8px;
+    border-radius: 3px ;
+}
+
+.searchResult-name {
+    color: #fff;
+    margin-bottom: 3px;
+}
+
+.searchResult-date {
+    color: #999;
+}
+
+.no-results{
+    text-align: center;
+}
+.no-results img{
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.no-results h3{
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.no-results p{
+    font-size: 1rem;
+}
+
+/* style scroll bar*/
+.suggestions::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #999999;
+}
+
+.suggestions::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #999;
+}
+
+.suggestions::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #212325;
+}
+
+@media screen and (max-width:767px){
+    .no-results img{
+        width: 200px;
+    }
+}
