@@ -23,7 +23,7 @@ class Navbar_ extends Component {
         <nav className="navbar navbar-expand-lg navbar-fixed-top container-fluid animated fadeIn">
             <div className="container">
                 <div className="d-flex flex-grow-1">
-                    <Link to="/Teller" className="navbar-brand d-lg-inline-block">
+                    <Link to="/home" className="navbar-brand d-lg-inline-block">
                         <div className="logo_box"><img alt="logo" src={logo}/></div>
                     </Link>
                     <div className="w-100 text-right" id="menu-button">
@@ -39,7 +39,7 @@ class Navbar_ extends Component {
                     
                         <div className="container">
                         <ul className="navbar-nav ml-auto flex-nowrap">
-                        <Link to="/">  
+                        <Link to="/home">  
                                 <li className="nav-item">
                                     <span  className="nav-link m-2 menu-item hvr-underline-from-left">Home</span>
                                 </li>
