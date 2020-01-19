@@ -33,7 +33,7 @@ class  App extends Component {
         <div className="App">
           <Navbar/>
           <Switch> {/* let one Route invoked at a time */}
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/home" component={Home}/>
             <Route path="/topRated" component={TopRated}/>
             <Route path="/upComing" component={Upcoming}/>
             <Route path="/nowPlaying" component={NowPlaying}/>
