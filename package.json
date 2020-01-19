@@ -1,6 +1,6 @@
 {
   "homepage": "https://hadebk.github.io/Teller",
-  "name": "Teller",
+  "name": "teller",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
