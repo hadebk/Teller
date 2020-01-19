@@ -19,7 +19,7 @@ const Footer = () => {
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
                         <div className="about">
                             <div className="img-box">
-                                <Link to="/Teller">
+                                <Link to="/home">
                                     <img src={logo} alt="logo"/>
                                 </Link>
                             </div>
