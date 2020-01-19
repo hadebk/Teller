@@ -29,7 +29,7 @@ class  App extends Component {
 
   render(){ 
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="Teller">
         <div className="App">
           <Navbar/>
           <Switch> {/* let one Route invoked at a time */}
