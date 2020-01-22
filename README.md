@@ -1,4 +1,4 @@
-# TELLER
+# TELLER Movies World
 - Here you can discover the details of all movies, and search for any movie to see it's details.
 - Implemented in React.js.
 - Using TMDB api.
