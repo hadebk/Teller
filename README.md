@@ -7,7 +7,7 @@
 [Here](http://teller.epizy.com)
 
 ## Project overview
-![Home page screenshot]('https://github.com/hadebk/Teller/blob/master/screenshot.png')
+![Home page screenshot](./screenshot.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
