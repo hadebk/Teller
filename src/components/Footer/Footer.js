@@ -19,7 +19,7 @@ const Footer = () => {
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 left">
                         <div className="about">
                             <div className="img-box">
-                                <Link to="/Teller">
+                                <Link to="/">
                                     <img src={logo} alt="logo"/>
                                 </Link>
                             </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                         <div className="powerd-by">
                             <h4>Powerd by</h4>
                             <div className="img-box">
-                                <a href="https://www.themoviedb.org/">
+                                <a rel='noopener noreferrer' target='_blank' href="https://www.themoviedb.org/">
                                     <img src={logo_tmdb} alt="logo-tmdb"/>
                                 </a>
                             </div>
@@ -48,11 +48,11 @@ const Footer = () => {
                         <div className="contact">
                             <h4>Find me: </h4>
                             <div>
-                                <a href="https://www.linkedin.com/in/abdalhady-bakr-b37516152/">
+                                <a rel='noopener noreferrer' target='_blank' href="https://www.linkedin.com/in/abdalhady-bakr-b37516152/">
                                 <img src={Linkedin} alt="linkedin"/>
                                 </a>
                             </div>
-                            <div><a href="https://www.linkedin.com/in/abdalhady-bakr-b37516152/"><img src={Github} alt="github"/></a></div>
+                            <div><a rel='noopener noreferrer' target='_blank' href="https://github.com/hadebk/Teller"><img src={Github} alt="github"/></a></div>
                         </div>
                     </div>
                 </div>
@@ -60,10 +60,10 @@ const Footer = () => {
             <div className="copyright">
                     <div>
                         <div style={{"marginBottom":"5px"}}>
-                        Made With <i className="fa fa-heart" style={{"margin": "0 10px 0 5px", "color":"#B30415"}}></i> 
-                        By <a href="https://www.linkedin.com/in/abdalhady-bakr-b37516152/">Me</a>
+                            Made With <i className="fa fa-heart" style={{"margin": "0 10px 0 5px", "color":"#B30415"}}></i> 
+                            By <a  rel='noopener noreferrer' target='_blank' href="https://www.linkedin.com/in/abdalhady-bakr-b37516152/">Me</a>
                         </div>
-    <div><i className="fal fa-copyright"></i>Teller {year}. All Rights Reserved</div>
+                        <div><i className="fal fa-copyright"></i>Teller {year}. All Rights Reserved</div>
                     </div>
             </div>
         </div>

@@ -5,7 +5,14 @@ import './Search_style.css';
 import NoImage from '../../images/icons8-image-100.jpg'
 import NoData from '../../images/no-result.png'
 import {URL_SEARCH, API_KEY_ALT, URL_IMAGE} from '../../const';
+
 const $ = window.$;
+
+/* 
+  - This component execute search query.
+  - Imported in Home.js and Navbar.js.
+  - Make live search, suggestions.
+*/
 
 class Search extends Component {
 
@@ -18,15 +25,20 @@ class Search extends Component {
   }
 
   componentDidMount(){
+      // body click > hide suggestion box
       $('body').click(()=>{
           $('.suggestions').css('display','none')
       })
+
+      // Search input click > show suggestion box, and stop event of body in above.
       document.querySelector('.form-control').addEventListener('click', function(e) {
         $('.suggestions').css('display','block')
         e.stopPropagation();
       });
+
   }
 
+  // Execute query and add results to state
   get_suggestions = (query) => {
     const inputValue = query.trim().toLowerCase();
 
@@ -46,6 +58,7 @@ class Search extends Component {
         });
   }
 
+  // Every time change the query word make new request and show new results
   onChange = (event) => {
     const query = event.target.value
     this.setState({
@@ -57,7 +70,8 @@ class Search extends Component {
 
   render() {
     const {value, suggestions} = this.state;
-    const suggestions_box = value.length > 0
+
+    const suggestions_box = value.length > 0 // if search input has value(word, char)
       ? (
           <div className="container main-box_">
         <div className="suggestions">
@@ -89,11 +103,11 @@ class Search extends Component {
             : (
               <div className="no-results">
                   <img src={NoData} alt="no result found"/>
-                  <h3>Oops! No result found</h3>
-                  <p>No result match your search word, please try another search word.</p>
+                  <h3>Oops!</h3>
+                  <p>There is no result match your search word.</p>
               </div>
-            )
-}
+              )
+          }
         </div>
         </div>
       )

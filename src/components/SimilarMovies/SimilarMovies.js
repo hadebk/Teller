@@ -5,7 +5,13 @@ import './SimilarMovies_style.css';
 import GetGernes from '../GetGernes'
 import NoPostser from '../../images/no_image.jpg';
 import {URL_DETAIL,API_KEY} from '../../const';
-import MoviesLoader from '../AllMovies/Loader/AllMoviesLoader';
+import NoData_undraw from '../../images/no_results_undraw.svg';
+
+/* 
+  - This component return similar movies.
+  - Imported in MovieDetailsPage.
+  - recieve movie_id as props and make request to return the similar movies.
+*/
 
 class SimilarMovies extends Component {
   
@@ -69,7 +75,13 @@ class SimilarMovies extends Component {
             }
         </div>
       )
-      : (<MoviesLoader/>)
+      : (
+        <div className='row no_similar_movies_box'>
+          <h5>Oops!</h5>
+          <p>There is no similar movies.</p>
+          <img src={NoData_undraw} alt='no movies'></img>
+        </div>
+        )
       
     return (
       <div className="main-header">

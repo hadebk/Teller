@@ -8,11 +8,22 @@ import AllMoviesLoader from './Loader/AllMoviesLoader';
 import NoPostser from '../../images/no_image.jpg';
 import {URL_DETAIL,API_KEY,URL_BACKGROUND} from '../../const';
 
-var th;
+var th,page_num;
 
+/*
+  - This component return all movies in 4 categories (popular, top rated, upcoming, now playing) with pagination.
+  - One component used in 4 pages of 4 categories, I import it and pass to it
+  some props to make dynamic request.
+  - This component imported in this 4 components:
+    + Upcoming.js
+    + TopRated.js
+    + Popular.js
+    + NowPlaying.js
+*/
 class AllMovies extends Component {
-  
+
   constructor(props) {
+  
     super(props);
     this.mounted = false;
     this.state = {
@@ -24,27 +35,49 @@ class AllMovies extends Component {
     };
     
   }
-  
+
+
   componentDidMount() {
     th=this
     this.mounted = true;
     window.scrollTo(0, 0)
+    // after render the com make request with page=1
     this.makeRequest(this.state.activePage)
+    /* when you are in movie details page in ex: popular category in page ex: 5,
+       and you click back button in browser go, this function will take you to popular>page=5
+       not page=1
+    */
+    this.backBtn();
   }
+
 
   componentWillUnmount() {
     this._isMounted = false;
-    
   }
 
+  backBtn(){
+    window.onpopstate = function(event) { 
+      if(event){ // you click back button in browser
+        th.setState({
+          activePage:page_num
+        })
+        th.makeRequest(th.state.activePage)
+      }
+    }
+  }
+
+  // make new request when click on + or - button in pagination buttons
   handlePageChange(pageNumber) {
+    // update the state then make new request
     th.mounted = true;
+    page_num=pageNumber
     th.setState({
       activePage:pageNumber
     })
     th.makeRequest(pageNumber)
   }
- 
+
+  // receive page number an dmake axios request 
   makeRequest(pageNumber){
     axios
       .get(`${URL_DETAIL}${th.props.api_url}${API_KEY}&language=en-US&page=${pageNumber}`)
@@ -56,12 +89,13 @@ class AllMovies extends Component {
             total_results:response.data.total_results
           });
           if(response.data.results.length > 0){
+            // check if thsi movie has backdrop image or not
             if(response.data.results[random_movie].hasOwnProperty('backdrop_path') && 
-          response.data.results[random_movie].backdrop_path !== null){
-            th.setState({header_image:response.data.results[random_movie].backdrop_path})
-          }else{
-            th.setState({header_image:null})
-          }
+            response.data.results[random_movie].backdrop_path !== null){
+              th.setState({header_image:response.data.results[random_movie].backdrop_path})
+            }else{
+              th.setState({header_image:null})
+            }
           }
       }).catch((error)=>{
         console.log(error)
@@ -69,6 +103,7 @@ class AllMovies extends Component {
   }
 
   render() {
+
     const {results, header_image, activePage ,total_pages, total_results} = this.state
     
     // add bachground image to header div

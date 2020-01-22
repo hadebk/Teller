@@ -6,6 +6,11 @@ import NoActor from '../../images/avatar.png';
 import Actorloader from './Loader/Actor_Loader'
 
 const $ = window.$
+
+/*
+  This component will recive Movie_id as props in MoviesDetailsPage.js 
+  and will return all actors of this movie
+*/
 class Actors extends Component {
 
     constructor(props) {

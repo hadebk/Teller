@@ -12,7 +12,13 @@ import SimilarMovies from '../SimilarMovies/SimilarMovies';
 
 var movie_id;
 
+/*
+    - This component receive movie_id as props then show this movie details.
+    - Make request with movie id and retrurn all details 
+*/
+
 class MovieDetailsPage extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -23,16 +29,21 @@ class MovieDetailsPage extends Component {
         };
     } 
 
+    // reload this page when this com receive new movei id
     UNSAFE_componentWillReceiveProps(nextProps) {
         if(nextProps.match.params.movie_id !== this.props.match.params.movie_id){
             window.location.reload();
+            // when load the page scroll to top
+            window.scrollTo(0, 0)
         }
     }
 
     componentDidMount() { 
+
         // when load the page scroll to top
         window.scrollTo(0, 0)
 
+        // get movie id from props
         movie_id = this.props.match.params.movie_id;
 
         // get movie details
@@ -47,9 +58,9 @@ class MovieDetailsPage extends Component {
             // chech if response has cover image or not
             if(response.data.hasOwnProperty('backdrop_path') && 
             response.data.backdrop_path !== null){
-            this.setState({header_image:response.data.backdrop_path})
+                this.setState({header_image:response.data.backdrop_path})
             }else{
-            this.setState({header_image:null})
+                this.setState({header_image:null})
             }
         }).catch((error)=>{
             console.log(error)
@@ -68,8 +79,6 @@ class MovieDetailsPage extends Component {
         }).catch((error)=>{
             console.log(error)
           })
-
-        
     }
 
     render() {
@@ -172,8 +181,8 @@ class MovieDetailsPage extends Component {
                         
                     </div>
 
-                    <div className='container'>
-                        <div className='row'>
+                    <div>
+                        <div>
                             <h5>SIMILAR MOVIES:</h5>
                             <SimilarMovies movie_id={this.props.match.params.movie_id}/>
                         </div>

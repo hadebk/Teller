@@ -125,6 +125,21 @@
     color:#b30415;
 }
 
+.no_similar_movies_box{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.no_similar_movies_box img{
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    margin: 20px auto 0;
+}
+
 /* responsive -------------------------------------------*/
 
 @media screen and (max-width:767px){

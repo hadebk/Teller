@@ -16,9 +16,7 @@ class Home extends Component {
       isOpen: false,
       videoID: null
     }
-    this.openModal = this
-      .openModal
-      .bind(this)
+    this.openModal = this.openModal.bind(this)
   }
 
   componentDidMount() {

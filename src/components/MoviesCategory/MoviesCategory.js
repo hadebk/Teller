@@ -7,8 +7,18 @@ import {URL_DETAIL, API_KEY} from '../../const';
 import GetGernes from '../GetGernes';
 import Loader from './Loader/Loader'
 
-
 const $ = window.$;
+
+/*
+  - This component return all movies -just first 20 movie- in 4 categories (popular, top rated, upcoming, now playing) with pagination.
+  - One component used in 4 sections in home page to show 4 categories movies, I import it and pass to it
+    some props to make dynamic request.
+  - This component imported in home components to show movies of:
+    + Upcoming
+    + TopRated
+    + Popular
+    + NowPlaying
+*/
 
 class MoviesCategory extends Component {
 
@@ -43,6 +53,10 @@ class MoviesCategory extends Component {
     this._isMounted = false;
   }
 
+  /* - init carousel 4 times (every time I import this component in home page),
+       with diffrenet selector, this step important to run carousel in well form.
+     - every time I use diffrenet id_, to init every carousel alone 
+  */
   init(id_) {
     // owl carousel init
     $('.main-content #' + id_).owlCarousel({
@@ -84,9 +98,11 @@ class MoviesCategory extends Component {
 
   render() {
     const {type, api_url, to} = this.props
+    
     const new_res=  this.state.results.filter((res)=>{
       return res.id !== 449924
     })
+
     // items => store all movies
     const items = this.state.results.length > 0
       ? (

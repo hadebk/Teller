@@ -4,6 +4,11 @@ import ModalVideo from 'react-modal-video';
 import './MovieTrailer.css';
 import {VIDEO_LINK,API_KEY} from '../../const';
 
+/* 
+  - This component return movie trailer.
+  - Imported in MovieDetailsPage.
+  - recieve movie_id as props and make request to return the Trailer
+*/
 class MovieTrailer extends Component {
  
   constructor () {
