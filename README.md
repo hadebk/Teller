@@ -1,3 +1,14 @@
+# TELLER
+- Here you can discover the details of all movies, and search for any movie to see it's details.
+- Implemented in React.js.
+- Using TMDB api.
+
+## Live Demo
+[Here](http://teller.epizy.com)
+
+## Project overview
+![Home page screenshot]('https://github.com/hadebk/Teller/blob/master/screenshot.png')
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
