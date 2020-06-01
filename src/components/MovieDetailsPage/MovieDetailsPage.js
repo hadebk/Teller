@@ -14,11 +14,12 @@ var movie_id;
 
 /*
     - This component receive movie_id as props then show this movie details.
-    - Make request with movie id and retrurn all details 
+    - Make request with movie id and return all details 
 */
 
 class MovieDetailsPage extends Component {
 
+    movie_id
     constructor(props) {
         super(props);
         this.state = {
@@ -27,35 +28,36 @@ class MovieDetailsPage extends Component {
         director:[],
         lang_length:null
         };
+
+        this.movie_id = this.props.match.params.movie_id;
     } 
 
-    // reload this page when this com receive new movei id
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        if(nextProps.match.params.movie_id !== this.props.match.params.movie_id){
-            window.location.reload();
-            // when load the page scroll to top
+    // reload this page when this com receive new movie id
+    UNSAFE_componentWillReceiveProps(nextProps){
+        if(this.movie_id !== nextProps.match.params.movie_id){
+            this.movie_id=nextProps.match.params.movie_id;
+            this.dataRequest(nextProps.match.params.movie_id);
             window.scrollTo(0, 0)
         }
     }
 
     componentDidMount() { 
-
         // when load the page scroll to top
         window.scrollTo(0, 0)
+        this.dataRequest(this.movie_id);
+    }
 
-        // get movie id from props
-        movie_id = this.props.match.params.movie_id;
-
+    dataRequest(movie_id_){
         // get movie details
         axios
-        .get(`${URL_DETAIL}${movie_id}${API_KEY}&language=en-US`)
+        .get(`${URL_DETAIL}${movie_id_}${API_KEY}&language=en-US`)
         .then(response => {
             this.setState({
                 movie: response.data,
                 lang_length: response.data.spoken_languages.length
             })
             document.title= 'Movie | '+this.state.movie.title
-            // chech if response has cover image or not
+            // check if response has cover image or not
             if(response.data.hasOwnProperty('backdrop_path') && 
             response.data.backdrop_path !== null){
                 this.setState({header_image:response.data.backdrop_path})
@@ -68,7 +70,7 @@ class MovieDetailsPage extends Component {
 
         // get movie's director
         axios
-        .get(`${URL_DETAIL}${movie_id}/credits${API_KEY}`)
+        .get(`${URL_DETAIL}${movie_id_}/credits${API_KEY}`)
         .then(response => {
             var director_ = response.data.crew.filter((crew)=>{
                 return crew.job === 'Director'
@@ -84,7 +86,7 @@ class MovieDetailsPage extends Component {
     render() {
         const {header_image, movie, director, lang_length} = this.state
 
-        // add bachground image to header div
+        // add background image to header div
         const cover_image = header_image !== null
         ? (<img src={URL_BACKGROUND+header_image} alt="cover_img"/>)
         : (<div className="light-1"></div>)
@@ -125,7 +127,7 @@ class MovieDetailsPage extends Component {
                             <div className="poster-box">
                                 <div className="poster-btn-box">
                                 <img src={poster_image} alt="poster-img" className="animated bounceIn delay-1s"/>
-                                <MovieTrailer video_id={this.props.match.params.movie_id}/>
+                                <MovieTrailer video_id={this.movie_id}/>
                                 </div>
                             </div>
                         </div>
@@ -173,7 +175,7 @@ class MovieDetailsPage extends Component {
                             <hr/>
                             <div className="actors">
                                 <h5>ACTORS:</h5>
-                                <Actors movie_id={this.props.match.params.movie_id}/>
+                                <Actors movie_id={this.movie_id}/>
                             </div>
                             <hr style={{'marginTop': '30px'}}/>
                             
@@ -184,7 +186,7 @@ class MovieDetailsPage extends Component {
                     <div>
                         <div>
                             <h5>SIMILAR MOVIES:</h5>
-                            <SimilarMovies movie_id={this.props.match.params.movie_id}/>
+                            <SimilarMovies movie_id={this.movie_id}/>
                         </div>
                     </div>
                     

@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 
 hr{
     border-color: #999999;
@@ -5,8 +12,9 @@ hr{
 }
 
 .header-box{
-    background-image: -webkit-linear-gradient(rgba(0,0,0,.1) 60%,#000),url("../../images/cover-bk-mob.jpg");
     background-image: -o-linear-gradient(rgba(0,0,0,.1) 60%,#000 100%),url("../../images/cover-bk-mob.jpg");
+    background-image: -webkit-gradient(linear,left top, left bottom,color-stop(60%, rgba(0,0,0,.1)),to(#000)),url("../../images/cover-bk-mob.jpg");
+    background-image: -o-linear-gradient(rgba(0,0,0,.1) 60%,#000),url("../../images/cover-bk-mob.jpg");
     background-image: linear-gradient(rgba(0,0,0,.1) 60%,#000),url("../../images/cover-bk-mob.jpg");
     height: auto;
     padding-bottom: 50px;
@@ -24,8 +32,13 @@ hr{
     padding-left: 37px;
 }
 .content ._buttons{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     padding-bottom: 20px;
     padding-top: 40px;
 }
@@ -39,17 +52,16 @@ hr{
     border-radius: 30px;
     width: 170px;
     min-width: 170px;
-    height: 50px;
     font-size: 1em;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     outline: none;
     border: none;
     cursor: pointer;
 }
 
 .content ._buttons #button-Trailer{
-    padding-top: 14px;
+    padding: 14px;
 }
 
 .content ._buttons #button-details{
@@ -70,7 +82,8 @@ hr{
     line-height: 1.3em;
     letter-spacing: 0.5px;
     overflow: hidden;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -117,12 +130,14 @@ hr{
 
 .modal-video-close-btn:before {
     -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
 }
 
 .modal-video-close-btn:after {
     -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
 }
 
 /*------------------------ responsive -------------------------------*/
@@ -135,8 +150,13 @@ hr{
         padding-top: 35vh;
     }
     .content ._buttons{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         padding-top: 0;
     }
     .content ._buttons div{

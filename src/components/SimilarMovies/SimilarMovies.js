@@ -21,12 +21,24 @@ class SimilarMovies extends Component {
     this.state = {
       results: []
     };
-}
+  }
   
+  UNSAFE_componentWillReceiveProps(nextProps){
+    if(this.props.movie_id !== nextProps.movie_id){
+      this.setState({results:[]})
+      this.dataRequest(nextProps.movie_id)
+    }
+  }
+
   componentDidMount() {
+    let movie_id = this.props.movie_id;
+    this.dataRequest(movie_id);
+  }
+  
+  dataRequest(movie_id_) {
     window.scrollTo(0, 0)
     axios
-      .get(`${URL_DETAIL}${this.props.movie_id}/similar${API_KEY}&language=en-US&page=1`)
+      .get(`${URL_DETAIL}${movie_id_}/similar${API_KEY}&language=en-US&page=1`)
       .then((response) => {
           this.setState({
             results: response.data.results

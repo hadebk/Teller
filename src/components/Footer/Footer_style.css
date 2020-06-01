@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 .main{
     background-color: #111;
     margin-top: 60px;
@@ -48,15 +55,16 @@
     color: #fff;
 }
 
-.right #links a::before {
-    content: "-";
-    color: #B30415;
-    margin-right: 6px;
-}
+
 
 .contact{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     margin-top: 25px;
 }
 
@@ -90,8 +98,13 @@
 }
 @media screen and (max-width:767px){
     .footer-box{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
         padding-left: 10px;
         padding-right: 10px;
     }

@@ -20,9 +20,19 @@ class MovieTrailer extends Component {
     this.openModal = this.openModal.bind(this)
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps){
+    if(this.props.video_id !== nextProps.video_id){
+        this.dataRequest(nextProps.video_id)
+    }
+  }
+
   componentDidMount() {
-    const id = this.props.video_id;
-    const url = `${VIDEO_LINK}${id}/videos${API_KEY}`;
+    let video_id = this.props.video_id;
+    this.dataRequest(video_id);
+  }
+
+  dataRequest(video_id){
+    const url = `${VIDEO_LINK}${video_id}/videos${API_KEY}`;
     axios.get(url).then(response => {
       if(response.data.results.length > 0){
         this.setState({ videoID: response.data.results[0].key });

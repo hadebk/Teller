@@ -20,10 +20,22 @@ class Actors extends Component {
         };
     } 
 
+    UNSAFE_componentWillReceiveProps(nextProps){
+      if(this.props.movie_id !== nextProps.movie_id){
+        this.setState({cast:[]})
+        this.dataRequest(nextProps.movie_id)
+      }
+    }
+  
     componentDidMount() {
+      let movie_id = this.props.movie_id;
+      this.dataRequest(movie_id);
+    }
+
+    dataRequest(movie_id_) {
         // get movie's actors
         axios
-        .get(`${URL_DETAIL}${this.props.movie_id}/credits${API_KEY}`)
+        .get(`${URL_DETAIL}${movie_id_}/credits${API_KEY}`)
         .then(response => {
             this.setState({
                 cast : response.data.cast
