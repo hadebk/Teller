@@ -48,7 +48,7 @@ const Footer = () => {
                         <div className="contact">
                             <h4>Find me: </h4>
                             <div>
-                                <a rel='noopener noreferrer' target='_blank' href="https://www.linkedin.com/in/abdalhady-bakr-b37516152/">
+                                <a rel='noopener noreferrer' target='_blank' href="https://www.linkedin.com/in/abdulhadi-bakr-b37516152/">
                                 <img src={Linkedin} alt="linkedin"/>
                                 </a>
                             </div>
@@ -61,7 +61,7 @@ const Footer = () => {
                     <div>
                         <div style={{"marginBottom":"5px"}}>
                             Made With <i className="fa fa-heart" style={{"margin": "0 10px 0 5px", "color":"#B30415"}}></i> 
-                            By <a  rel='noopener noreferrer' target='_blank' href="https://www.linkedin.com/in/abdalhady-bakr-b37516152/">Me</a>
+                            By <a  rel='noopener noreferrer' target='_blank' href="https://www.linkedin.com/in/abdulhadi-bakr-b37516152/">Me</a>
                         </div>
                         <div><i className="fal fa-copyright"></i>Teller {year}. All Rights Reserved</div>
                     </div>
