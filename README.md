@@ -4,7 +4,7 @@
 - Using TMDB api.
 
 ## Live Demo
-[Here](http://teller.epizy.com)
+[Here](https://movies-teller.netlify.app/)
 
 ## Project overview
 ![Home page screenshot](./screenshot.png)
