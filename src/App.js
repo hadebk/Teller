@@ -38,15 +38,15 @@ class  App extends Component {
           <Navbar />
           <Switch> {/* let one Route invoked at a time */}
             <Route exact path="/Teller" component={Home}/>
-            <Route path="/topRated" component={TopRated}/>
-            <Route path="/upComing" component={Upcoming}/>
-            <Route path="/nowPlaying" component={NowPlaying}/>
-            <Route path="/popular" component={Popular}/>
-            <Route  path="/movie/:movie_id" component={MovieDetailsPage}/>
-            <Route  path="/upComing_/:movie_id" component={MovieDetailsPage}/>
-            <Route  path="/topRated_/:movie_id" component={MovieDetailsPage}/>
-            <Route  path="/popular_/:movie_id" component={MovieDetailsPage}/>
-            <Route  path="/nowPlaying_/:movie_id" component={MovieDetailsPage}/>
+            <Route path="/Teller/topRated" component={TopRated}/>
+            <Route path="/Teller/upComing" component={Upcoming}/>
+            <Route path="/Teller/nowPlaying" component={NowPlaying}/>
+            <Route path="/Teller/popular" component={Popular}/>
+            <Route  path="/Teller/movie/:movie_id" component={MovieDetailsPage}/>
+            <Route  path="/Teller/upComing_/:movie_id" component={MovieDetailsPage}/>
+            <Route  path="/Teller/topRated_/:movie_id" component={MovieDetailsPage}/>
+            <Route  path="/Teller/popular_/:movie_id" component={MovieDetailsPage}/>
+            <Route  path="/Teller/nowPlaying_/:movie_id" component={MovieDetailsPage}/>
             <Route component={NoMatchPage} />
           </Switch>
           <Footer/>
